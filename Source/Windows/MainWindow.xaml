@@ -1,0 +1,28 @@
+﻿<Window x:Class="Source.Windows.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Source.Windows" 
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Name="grid">
+        <!--<Grid.Resources>
+            <SolidColorBrush x:Key="primaryColor">Green</SolidColorBrush>
+            <sys:Double x:Key="btnHeight">45</sys:Double>
+        </Grid.Resources>-->
+        
+        
+        <!--<Image Width="100" Height="100" Source="/wpf-logo.png" ></Image>-->
+
+
+        <StackPanel Width="300">
+            <Button Background="{StaticResource secondaryColor}" FontSize="{DynamicResource btnHeight}">Add</Button>
+            <Button Background="{DynamicResource primaryColor}" FontSize="{StaticResource btnHeight}">Edit</Button>
+            <Button Background="{StaticResource primaryColor}" FontSize="{DynamicResource btnHeight}">Save</Button>
+        </StackPanel>
+        
+        
+    </Grid>
+</Window>
