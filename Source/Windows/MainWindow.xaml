@@ -12,17 +12,98 @@
             <SolidColorBrush x:Key="primaryColor">Green</SolidColorBrush>
             <sys:Double x:Key="btnHeight">45</sys:Double>
         </Grid.Resources>-->
-        
-        
+
+
         <!--<Image Width="100" Height="100" Source="/wpf-logo.png" ></Image>-->
 
 
-        <StackPanel Width="300">
+        <!--<StackPanel Width="300">
             <Button Background="{StaticResource secondaryColor}" FontSize="{DynamicResource btnHeight}">Add</Button>
             <Button Background="{DynamicResource primaryColor}" FontSize="{StaticResource btnHeight}">Edit</Button>
             <Button Background="{StaticResource primaryColor}" FontSize="{DynamicResource btnHeight}">Save</Button>
-        </StackPanel>
+        </StackPanel>-->
+
+
+
+
+
+        <!--<StackPanel>
+            <Slider Name="sld" Minimum="20" Maximum="100"></Slider>
+            <TextBlock FontSize="{Binding ElementName=sld, Path=Value}">Hello WPF</TextBlock>
+        </StackPanel>-->
+
+
+
+        <!--<StackPanel>
+            <Slider Value="50" Height="30" Name="sld" Minimum="20" Maximum="100"></Slider>
+            <Slider Value="{Binding ElementName=sld, Path=Value, Mode=OneTime}"   Height="30" Minimum="20" Maximum="100"></Slider>
+        </StackPanel>-->
+
+
+
+
+        <!--<StackPanel>
+            <TextBlock Name="txtBlock" FontSize="36" Text="{Binding SomeText, Mode=TwoWay}"></TextBlock>
+            <TextBlock FontSize="36" Text="{Binding SomeText}"></TextBlock>
+            <Button Click="BtnAddChar" FontSize="36">Add</Button>
+        </StackPanel>-->
+
+
+
+
+        <!--<StackPanel Width="400">
+            <Label HorizontalContentAlignment="Center" FontSize="36">Make</Label>
+            <TextBlock Foreground="DeepSkyBlue" FontSize="36" Text="{Binding Car.Make}"></TextBlock>
+
+            <Label HorizontalContentAlignment="Center" FontSize="36">Model</Label>
+            <TextBlock Foreground="DeepSkyBlue" FontSize="36" Text="{Binding Car.Model}"></TextBlock>
+
+            <Label HorizontalContentAlignment="Center" FontSize="36">Year</Label>
+            <TextBox Foreground="DeepSkyBlue" FontSize="36" Text="{Binding Car.Year, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        </StackPanel>-->
+
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+
+
+        <Slider Grid.Row="0" Name="sld" Minimum="20" Maximum="100"></Slider>
+
+
+        <ListBox Grid.Row="1" 
+                 MouseDoubleClick="ListBox_MouseDoubleClick"
+                 FontSize="{Binding ElementName=sld, Path=Value}"
+                 ItemsSource="{Binding Cars}">
+            <ListBox.ItemTemplate>
+                
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="10" Text="{Binding Make}"></TextBlock>
+                        <TextBlock Margin="10" Text="{Binding Model}"></TextBlock>
+                        <TextBlock Margin="10" Text="{Binding Year}"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+                
+            </ListBox.ItemTemplate>
+        </ListBox>
         
         
+        <Button Grid.Row="2"
+                Content="Add"
+                FontSize="26"
+                Foreground="GhostWhite"
+                Background="DarkSlateBlue"
+                Click="BtnAddCar">
+        </Button>
+        
+        
+        
+        
+
     </Grid>
 </Window>
